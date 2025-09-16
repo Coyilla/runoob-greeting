@@ -2,22 +2,19 @@
 
 #### 介绍
 rust的练习代码，包括rust的基础知识，rust web等。
+这是一个用 Rust 从零开始实现的简单 HTTP 服务器项目，用于学习 Rust Web 开发的基础知识。
+## 项目来源
+该项目是学习B站视频[Rust Web 全栈开发教程【完结】](https://www.bilibili.com/video/BV1RP4y1G7KF?spm_id_from=333.788.videopod.episodes&vd_source=d56107846eb42ec63f2c0661c9818246&p=6)中的代码实现。
+大家可以关注B站上的作者[软件工艺师](https://space.bilibili.com/361469957/?spm_id_from=333.788.upinfo.detail.click)
 
-#### 软件架构
-软件架构说明
+## 框架
 
+### 1. s1
+s1 是[Rust Web 全栈开发教程【完结】](https://www.bilibili.com/video/BV1RP4y1G7KF?spm_id_from=333.788.videopod.episodes&vd_source=d56107846eb42ec63f2c0661c9818246&p=6)的【前戏】部分，是用 Rust 从零开始实现的简单 HTTP 服务器项目，用于学习 Rust Web 开发的基础知识。
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+详细文档[看这里](./s1/doc/zero2rustweb.md)
+### 2.ws
+ws是一个独立的workspace,
 
 #### 参与贡献
 
