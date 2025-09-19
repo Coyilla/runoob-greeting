@@ -2,11 +2,17 @@
 name = "webservice"
 version = "0.1.0"
 edition = "2024"
+default-run ="teacher-service"
 
-[dependencies]
-actix-web="4"
-actix-rt="1.1.1"
-tokio     = { version = "1", features = ["full"] }
+[dependencies]     #如果发生错误了很可能就是因为版本跟不上，要换成最新版本
+actix-web = "4.4"  # 升级到最新稳定版
+actix-rt = "2.2"
+tokio = { version = "1", features = ["full"] }
+serde={version="1.0.132",features=["derive"]}
+chrono={version="0.4.19",features=["serde"]}
 
 [[bin]]
 name = "server1"
+
+[[bin]]
+name="teacher-service"
