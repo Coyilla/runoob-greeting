@@ -1,4 +1,5 @@
 DROP TABLE if EXISTS course;
+SET lc_messages='C';
 CREATE TABLE course(  
     id SERIAL PRIMARY KEY,
     teacher_id INT NOT NULL,

@@ -25,9 +25,21 @@ async fn main()->io::Result<()>{
         .unwrap();
 
     let course_rows=sqlx::query!(
-        r#"select id,teacher_id,name,time from course where id = $1"#,
+        r#"SELECT id,teacher_id,name,time FROM course WHERE id = $1"#,
         1
     ).fetch_all(&db_pool)
     .await
     .unwrap();
+
+    let mut courses_list=vec![];
+    for row in course_rows{
+        courses_list.push(Course {
+            id:row.id,
+            teacher_id:row.teacher_id,
+            name:row.name,
+            time:Some(chrono::NaiveDateTime::from(row.time.unwrap())),
+        });
+    }
+    println!("Course={:?}",courses_list);
+    Ok(())
 }

@@ -1,18 +1,18 @@
 [package]
 name = "db"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"          # 2024 还没稳定，先用 2021
 
 [dependencies]
-actix-rt="1.1.1"
-actix-web="3.3.3"
-chrono={version="0.4.19",features=["serde"]}
-dotenv="0.15.0"
-openssl={version="0.10.38",features=["vendored"]}
-serde={version="1.0.134",features=["derive"]}
-sqlx={version="0.5.10",features=[
+actix-rt        = "2.9"   # 与 actix-web 4.x 配套
+actix-web       = "4.4"
+chrono          = { version = "0.4", features = ["serde"] }
+dotenv          = "0.15"
+serde           = { version = "1.0", features = ["derive"] }
+# 彻底删掉 openssl 依赖
+sqlx            = { version = "0.7", features = [
     "postgres",
-    "runtime-tokio-rustls",
+    "runtime-tokio-rustls",  # 纯 Rust TLS，零 native
     "macros",
     "chrono",
-]}
+] }
