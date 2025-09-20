@@ -1,0 +1,17 @@
+# 忽略所有数据库文件
+*.db
+*.backup
+*.dump
+*.mdb
+*.accdb
+
+pg_data/
+postgres_data/
+db/target/
+
+target/
+debug/
+release/
+*.pdb
+*.rlib
+*.rmeta
