@@ -4,12 +4,26 @@ version = "0.1.0"
 edition = "2024"
 default-run ="teacher-service"
 
-[dependencies]     #如果发生错误了很可能就是因为版本跟不上，要换成最新版本
-actix-web = "4.4"  # 升级到最新稳定版
-actix-rt = "2.2"
-tokio = { version = "1", features = ["full"] }
-serde={version="1.0.132",features=["derive"]}
-chrono={version="0.4.19",features=["serde"]}
+#[dependencies]     #如果发生错误了很可能就是因为版本跟不上，要换成最新版本
+#actix-web = "4.4"  # 升级到最新稳定版
+#actix-rt = "2.2"
+#tokio = { version = "1", features = ["full"] }
+#serde={version="1.0.132",features=["derive"]}
+#chrono={version="0.4.19",features=["serde"]}
+
+[dependencies]
+actix-rt        = "2.9"   # 与 actix-web 4.x 配套
+actix-web       = "4.4"
+chrono          = { version = "0.4", features = ["serde"] }
+dotenv          = "0.15"
+serde           = { version = "1.0", features = ["derive"] }
+# openssl={version="0.10.38",features=["vendored]} #window系统不好用，macOS可考虑
+sqlx            = { version = "0.8.6", features = [
+    "postgres",
+    "runtime-tokio-rustls",  # 纯 Rust TLS，零 native
+    "macros",
+    "chrono",
+] }
 
 [[bin]]
 name = "server1"

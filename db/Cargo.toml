@@ -9,7 +9,7 @@ actix-web       = "4.4"
 chrono          = { version = "0.4", features = ["serde"] }
 dotenv          = "0.15"
 serde           = { version = "1.0", features = ["derive"] }
-# 彻底删掉 openssl 依赖
+# openssl={version="0.10.38",features=["vendored]} #window系统不好用，macOS可考虑
 sqlx            = { version = "0.7", features = [
     "postgres",
     "runtime-tokio-rustls",  # 纯 Rust TLS，零 native
